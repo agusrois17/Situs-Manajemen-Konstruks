@@ -11,14 +11,6 @@
 <body>
     <header>
         <h1>Situs Manajemen Konstruksi</h1>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="dokumen.html">Dokumen</a></li>
-                <li><a href="transaksi.html">Transaksi</a></li>
-                <li><a href="pengaturan.html">Pengaturan</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -28,6 +20,21 @@
             <a href="dashboard.html" class="btn">Mulai Sekarang</a>
         </section>
     </main>
+
+    <!-- Tombol Menu di Bawah Kiri -->
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">✖</button>
+        <ul>
+            <li><a href="index.html">Tampilan Publik</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </div>
 
     <footer>
         <p>&copy; 2025 Situs Manajemen Konstruksi</p>
