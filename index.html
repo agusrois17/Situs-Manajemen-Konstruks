@@ -4,40 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Situs Manajemen Konstruksi</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script defer src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Situs Manajemen Konstruksi</h1>
-    </header>
+
+    <!-- Navbar (Desktop) -->
+    <nav class="navbar">
+        <a href="index.html">Tampilan Publik</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <!-- Floating Menu (Mobile) -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- Sidebar Menu (Mobile) -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Tampilan Publik</a><br>
+        <a href="login.html">Login</a><br>
+        <a href="dashboard.html">Dashboard</a><br>
+    </div>
 
     <main>
-        <section class="hero">
-            <h2>Selamat Datang</h2>
-            <p>Kelola dokumen proyek dengan lebih efisien.</p>
-            <a href="dashboard.html" class="btn">Mulai Sekarang</a>
-        </section>
+        <h1>Situs Manajemen Konstruksi</h1>
+        <p>Kelola dokumen proyek dengan lebih efisien.</p>
+        <button onclick="goToDashboard()">Mulai Sekarang</button>
     </main>
 
-    <!-- Tombol Menu di Bawah Kiri -->
-    <div class="menu-btn" onclick="toggleMenu()">
-        ☰
-    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("show");
+        }
 
-    <!-- Sidebar Menu -->
-    <div class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">✖</button>
-        <ul>
-            <li><a href="index.html">Tampilan Publik</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-        </ul>
-    </div>
+        function goToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
 
-    <footer>
-        <p>&copy; 2025 Situs Manajemen Konstruksi</p>
-    </footer>
 </body>
 </html>
