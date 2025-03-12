@@ -1,3 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Situs Manajemen Konstruksi siap digunakan!");
-});
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("show");
+}
