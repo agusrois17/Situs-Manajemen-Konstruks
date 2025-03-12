@@ -1,40 +1,80 @@
-/* Efek Hover di Navbar */
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; /* Ukuran default teks */
+    color: #fff;
+    background-color: #121212;
+}
+
+/* Header */
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Navigasi */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
 nav ul li a {
-    font-size: 13px;
-    padding: 8px 12px;
-    transition: all 0.3s ease-in-out; /* Animasi smooth */
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
     color: #f06292; /* Shadowline pink */
-    text-shadow: 0px 0px 8px rgba(240, 98, 146, 0.8); /* Efek glow */
-    transform: scale(1.05); /* Sedikit membesar saat dihover */
+    text-shadow: 0px 0px 8px rgba(240, 98, 146, 0.8);
 }
 
-/* Efek Hover di Tombol */
-.button {
-    background-color: #f06292;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+/* Hero Section */
+.hero h2 {
+    font-size: 20px;
+    text-align: center;
 }
 
-.button:hover {
-    background-color: #fff;
-    color: #f06292;
-    box-shadow: 0px 0px 10px rgba(240, 98, 146, 0.8);
-    transform: translateY(-2px); /* Naik sedikit saat hover */
+.hero p {
+    font-size: 14px;
+    text-align: center;
 }
 
-/* Efek Hover di Box Topik */
+/* Topik Section */
+.topik {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
 .topik-box {
     background-color: #1a1a1a;
     padding: 20px;
+    border-radius: 8px;
+    text-align: center;
     transition: all 0.3s ease-in-out;
 }
 
-.topik-box:hover {
-    box-shadow: 0px 0px 12px rgba(240, 98, 146, 0.6);
-    transform: translateY(-5px); /* Naik sedikit saat hover */
+.topik-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.topik-box p {
+    font-size: 14px;
+}
+
+/* Footer */
+footer p {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0;
 }
