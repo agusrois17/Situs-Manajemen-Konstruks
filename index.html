@@ -1,33 +1,31 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Situs Manajemen Konstruksi</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Dashboard Manajemen Konstruksi</h1>
+        <h1>Situs Manajemen Konstruksi</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Dokumen</a></li>
+                <li><a href="#">Transaksi</a></li>
+                <li><a href="#">Pengaturan</a></li>
+            </ul>
+        </nav>
     </header>
+    
+    <main>
+        <section>
+            <h2>Selamat Datang</h2>
+            <p>Kelola dokumen proyek dengan lebih efisien.</p>
+        </section>
+    </main>
 
-    <nav>
-        <ul>
-            <li><a href="transaksi.html">Transaksi Dokumen</a></li>
-            <li><a href="monitoring.html">Approval & Monitoring</a></li>
-            <li><a href="laporan.html">Laporan</a></li>
-        </ul>
-    </nav>
-
-    <!-- Chatbot AI -->
-    <div id="chatbot-icon" onclick="toggleChatbot()">💬 Chat AI</div>
-    <div id="chatbot-container">
-        <div id="chatbot-header">Chatbot AI <span onclick="toggleChatbot()">✖</span></div>
-        <div id="chatbot-messages"></div>
-        <input type="text" id="chatbot-input" placeholder="Ketik pesan...">
-        <button onclick="sendMessage()">Kirim</button>
-    </div>
-
-    <script src="assets/js/chatbot.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
