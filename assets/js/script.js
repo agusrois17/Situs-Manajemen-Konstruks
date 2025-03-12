@@ -1,3 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Situs Manajemen Konstruksi siap digunakan!");
-});
+// Toggle Sidebar Mobile
+function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("show");
+}
+
+// Redirect ke Dashboard
+function goToDashboard() {
+    window.location.href = "dashboard.html";
+}
