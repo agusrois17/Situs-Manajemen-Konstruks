@@ -30,25 +30,57 @@
 
     <div class="container my-4">
         <h2 class="text-center">📁 Sirkulasi Dokumen</h2>
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Dokumen</th>
-                            <th>Kategori</th>
-                            <th>Status</th>
-                            <th>Tanggal</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody id="document-table">
-                        <!-- Data akan diisi secara dinamis -->
-                    </tbody>
-                </table>
-            </div>
+
+        <!-- 🔹 Form Input Dokumen -->
+        <div class="card p-3 mb-4">
+            <h4>Tambah Dokumen</h4>
+            <form id="document-form">
+                <div class="mb-3">
+                    <label for="docName" class="form-label">Nama Dokumen</label>
+                    <input type="text" id="docName" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="docCategory" class="form-label">Kategori</label>
+                    <select id="docCategory" class="form-select">
+                        <option value="Struktur">Struktur</option>
+                        <option value="Arsitektur">Arsitektur</option>
+                        <option value="MEP">MEP</option>
+                        <option value="Material">Material</option>
+                        <option value="Laporan">Laporan</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="docStatus" class="form-label">Status</label>
+                    <select id="docStatus" class="form-select">
+                        <option value="Dikirim">Dikirim</option>
+                        <option value="Disetujui">Disetujui</option>
+                        <option value="Menunggu">Menunggu</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="docDate" class="form-label">Tanggal</label>
+                    <input type="date" id="docDate" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Tambah Dokumen</button>
+            </form>
         </div>
+
+        <!-- 🔹 Tabel Dokumen -->
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Dokumen</th>
+                    <th>Kategori</th>
+                    <th>Status</th>
+                    <th>Tanggal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="document-table">
+                <!-- Data akan diisi secara dinamis -->
+            </tbody>
+        </table>
     </div>
 
     <script>
@@ -66,7 +98,7 @@
                         <td>${doc.category}</td>
                         <td>${doc.status}</td>
                         <td>${doc.date}</td>
-                        <td><button class="btn btn-primary">Lihat</button></td>
+                        <td><button class="btn btn-danger" onclick="deleteDocument(${index})">Hapus</button></td>
                     </tr>`;
                     tableBody.innerHTML += row;
                 });
@@ -75,7 +107,32 @@
             }
         }
 
+        document.getElementById("document-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const name = document.getElementById("docName").value;
+            const category = document.getElementById("docCategory").value;
+            const status = document.getElementById("docStatus").value;
+            const date = document.getElementById("docDate").value;
+
+            const response = await fetch("http://localhost:5000/api/documents", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, category, status, date }),
+            });
+
+            if (response.ok) {
+                fetchDocuments();
+                document.getElementById("document-form").reset();
+            }
+        });
+
+        async function deleteDocument(index) {
+            await fetch(`http://localhost:5000/api/documents/${index}`, { method: "DELETE" });
+            fetchDocuments();
+        }
+
         document.addEventListener("DOMContentLoaded", fetchDocuments);
     </script>
 </body>
+</html></body>
 </html>
