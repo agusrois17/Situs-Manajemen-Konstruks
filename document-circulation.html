@@ -2,115 +2,80 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Manajemen Dokumen</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- DataTables CSS -->
-    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/document.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirkulasi Dokumen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
-    <!-- 🔹 NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">🏗️ Construction Management</a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Manajemen Konstruksi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="document-circulation.html">Dokumen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="chatbot.html">Chatbot</a></li>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="document-circulation.html">Sirkulasi Dokumen</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 🔹 CONTAINER DOKUMEN -->
     <div class="container my-4">
-        <h1 class="text-center">📄 Manajemen Sirkulasi Dokumen</h1>
-
-        <!-- 🔹 UPLOAD FORM -->
-        <div class="card my-4">
-            <div class="card-header bg-primary text-white">Upload Dokumen</div>
-            <div class="card-body">
-                <form id="uploadForm">
-                    <div class="mb-3">
-                        <label for="docName" class="form-label">Nama Dokumen</label>
-                        <input type="text" class="form-control" id="docName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="docCategory" class="form-label">Kategori</label>
-                        <select class="form-control" id="docCategory">
-                            <option>Shop Drawing</option>
-                            <option>Material</option>
-                            <option>Ijin Pekerjaan</option>
-                            <option>Hasil Tes</option>
-                            <option>Berita Acara</option>
-                            <option>Risalah Rapat</option>
-                            <option>Surat & Memo</option>
-                            <option>Laporan</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="docFile" class="form-label">Pilih File</label>
-                        <input type="file" class="form-control" id="docFile" required>
-                    </div>
-                    <button type="submit" class="btn btn-success">Upload</button>
-                </form>
+        <h2 class="text-center">📁 Sirkulasi Dokumen</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Dokumen</th>
+                            <th>Kategori</th>
+                            <th>Status</th>
+                            <th>Tanggal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="document-table">
+                        <!-- Data akan diisi secara dinamis -->
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <!-- 🔹 TABEL DOKUMEN -->
-        <h3>📂 Daftar Dokumen</h3>
-        <table id="documentTable" class="table table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th>Nama Dokumen</th>
-                    <th>Kategori</th>
-                    <th>Status</th>
-                    <th>Tanggal</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Shop Drawing - Pondasi</td>
-                    <td>Shop Drawing</td>
-                    <td class="text-warning">Pending</td>
-                    <td>10 Maret 2025</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm">Download</button>
-                        <button class="btn btn-success btn-sm">Approve</button>
-                        <button class="btn btn-danger btn-sm">Reject</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
     </div>
 
-    <!-- 🔹 FOOTER -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>Hak Cipta &copy; 2025. Construction Management Web</p>
-    </footer>
+    <script>
+        async function fetchDocuments() {
+            try {
+                const response = await fetch("http://localhost:5000/api/documents");
+                const documents = await response.json();
+                const tableBody = document.getElementById("document-table");
+                tableBody.innerHTML = "";
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                documents.forEach((doc, index) => {
+                    const row = `<tr>
+                        <td>${index + 1}</td>
+                        <td>${doc.name}</td>
+                        <td>${doc.category}</td>
+                        <td>${doc.status}</td>
+                        <td>${doc.date}</td>
+                        <td><button class="btn btn-primary">Lihat</button></td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error("Gagal mengambil data dokumen:", error);
+            }
+        }
 
-    <!-- DataTables JS -->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="assets/js/documentCirculation.js"></script>
-
+        document.addEventListener("DOMContentLoaded", fetchDocuments);
+    </script>
 </body>
-                          </html>
+</html>
