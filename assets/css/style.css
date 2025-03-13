@@ -1,35 +1,19 @@
-/* General Text Size */
+/* 🔹 Umum */
 body {
-    font-size: 12px; /* Ukuran default yang lebih kecil */
+    font-family: Arial, sans-serif;
 }
 
-/* Header */
-header h1 {
-    font-size: 20px;
-    text-align: center;
+/* 🔹 Hero Section */
+.hero {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
 }
 
-/* Menu */
-.menu-btn {
-    background-color: #f06292;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Topik Box */
-.topik-box {
-    background-color: #1e1e1e; /* Warna lebih terang dari hitam */
-    color: #fff;
-    padding: 15px;
+/* 🔹 Statistik */
+.stat-box {
+    padding: 20px;
     border-radius: 10px;
+    color: white;
+    font-weight: bold;
     margin: 10px 0;
-    transition: all 0.3s;
-}
-
-.topik-box:hover {
-    background-color: #292929;
 }
