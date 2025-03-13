@@ -2,189 +2,77 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Construction Management Web</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Konstruksi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-    <!-- 🔹 Running Text (Marquee) -->
-    <div class="bg-primary text-white py-2">
-        <marquee behavior="scroll" direction="left">
-            🚀 Update: Proyek Tower A mencapai 75% progres | Deadline laporan mingguan: 15 Maret 2025 | Meeting koordinasi besok jam 10:00 WIB
-        </marquee>
-    </div>
-
-    <!-- 🔹 Navbar dengan Tooltip -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">🏗️ Construction Management</a>
+            <a class="navbar-brand" href="#">Manajemen Konstruksi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Beranda utama proyek">Home</a>
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lihat progres proyek secara real-time">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="document-circulation.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Kelola dokumen proyek seperti approval & laporan">Dokumen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chatbot.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Dapatkan bantuan AI terkait proyek">Chatbot</a>
+                        <a class="nav-link" href="document-circulation.html">Dokumen</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 🔹 Hero Section -->
-    <header class="bg-light text-center py-5">
-        <div class="container">
-            <h1 class="display-5">🚧 Construction Management System</h1>
-            <p class="lead">Platform manajemen proyek konstruksi yang efisien & terstruktur.</p>
-            <a href="dashboard.html" class="btn btn-primary">Lihat Dashboard</a>
-        </div>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1 class="fs-4">Sistem Manajemen Konstruksi</h1>
+        <p class="fs-6">Mengelola dokumen, progres, dan komunikasi proyek secara efisien</p>
     </header>
 
-    <!-- 🔹 Highlight Proyek -->
-    <section id="highlight-proyek" class="container my-5">
-        <h2 class="text-center">🏗️ Proyek Terbaru</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h4>🔹 Proyek Tower A</h4>
-                <p>Progres saat ini: <strong>75%</strong> | Estimasi selesai: <strong>Juni 2025</strong></p>
-            </div>
-            <div class="col-md-6">
-                <h4>🔹 Jalan Raya XYZ</h4>
-                <p>Progres saat ini: <strong>40%</strong> | Estimasi selesai: <strong>Desember 2025</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔹 Statistik Proyek -->
-    <section id="statistik" class="container my-5">
-        <h2 class="text-center">📊 Statistik Proyek</h2>
-        <div class="row text-center">
-            <div class="col-md-3">
-                <h3>25</h3>
-                <p>Proyek Berjalan</p>
-            </div>
-            <div class="col-md-3">
-                <h3>10</h3>
-                <p>Proyek Selesai</p>
-            </div>
-            <div class="col-md-3">
-                <h3>150+</h3>
-                <p>Dokumen Diproses</p>
-            </div>
-            <div class="col-md-3">
-                <h3>5</h3>
-                <p>Proyek Tertunda</p>
-            </div>
-        </div>
-    </section
-
-<!-- 🔹 Statistik Proyek -->
-<section id="statistik" class="container my-5">
-    <h2 class="text-center">📊 Statistik Proyek</h2>
-    <div class="row text-center">
-        <div class="col-md-3">
-            <h3 id="projects-active">-</h3>
-            <p>Proyek Berjalan</p>
-        </div>
-        <div class="col-md-3">
-            <h3 id="projects-completed">-</h3>
-            <p>Proyek Selesai</p>
-        </div>
-        <div class="col-md-3">
-            <h3 id="documents-processed">-</h3>
-            <p>Dokumen Diproses</p>
-        </div>
-        <div class="col-md-3">
-            <h3 id="projects-pending">-</h3>
-            <p>Proyek Tertunda</p>
-        </div>
+    <!-- Running Text -->
+    <div class="bg-light py-2">
+        <marquee class="fs-6 text-muted">
+            Data dokumen proyek akan segera diperbarui secara real-time. Pastikan semua persetujuan dan laporan terbaru telah diinput ke dalam sistem.
+        </marquee>
     </div>
-</section>
 
-<script>
-    async function updateStatistics() {
-        try {
-            const response = await fetch("http://localhost:5000/api/stats");
-            const data = await response.json();
-
-            document.getElementById("projects-active").textContent = data.projects_active;
-            document.getElementById("projects-completed").textContent = data.projects_completed;
-            document.getElementById("documents-processed").textContent = data.documents_processed;
-            document.getElementById("projects-pending").textContent = data.projects_pending;
-        } catch (error) {
-            console.error("Gagal mengambil data statistik:", error);
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", updateStatistics);
-</script>
-        
-    <!-- 🔹 Testimoni Pengguna -->
-    <section id="testimoni" class="container my-5">
-        <h2 class="text-center">💬 Testimoni Pengguna</h2>
+    <!-- Konten Utama -->
+    <main class="container mt-4">
         <div class="row">
             <div class="col-md-6">
-                <blockquote class="blockquote">
-                    <p>"Sistem ini sangat membantu dalam manajemen dokumen proyek. Sangat direkomendasikan!"</p>
-                    <footer class="blockquote-footer">Budi Santoso, PT. Konstruksi Jaya</footer>
-                </blockquote>
+                <h2 class="fs-5">Kenapa Menggunakan Sistem Ini?</h2>
+                <p class="fs-6">Sistem ini membantu Anda dalam:</p>
+                <ul class="fs-6">
+                    <li>🔹 Manajemen sirkulasi dokumen proyek</li>
+                    <li>🔹 Melacak progres pekerjaan konstruksi</li>
+                    <li>🔹 Menyimpan dan mencetak dokumen penting</li>
+                    <li>🔹 Mendapatkan notifikasi persetujuan dokumen</li>
+                </ul>
             </div>
             <div class="col-md-6">
-                <blockquote class="blockquote">
-                    <p>"Dengan dashboard ini, saya bisa melihat progres proyek dengan lebih jelas dan cepat."</p>
-                    <footer class="blockquote-footer">Siti Rahmawati, Manajer Proyek</footer>
-                </blockquote>
+                <h2 class="fs-5">Fitur Utama</h2>
+                <p class="fs-6">Aplikasi ini memiliki fitur:</p>
+                <ul class="fs-6">
+                    <li>✔️ Approval dokumen (Shop Drawing, Material, Izin Kerja)</li>
+                    <li>✔️ Laporan Harian, Mingguan, Bulanan</li>
+                    <li>✔️ Risalah rapat dan Berita Acara</li>
+                    <li>✔️ Chatbot AI untuk asistensi</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- 🔹 Footer -->
+    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <p>Hak Cipta &copy; 2025 - Construction Management Web</p>
-        <p>📩 Email: support@constructionweb.com | 📍 Lokasi: Jakarta, Indonesia</p>
-        <p>
-            <a href="#" class="text-white mx-2">Facebook</a> | 
-            <a href="#" class="text-white mx-2">Twitter</a> | 
-            <a href="#" class="text-white mx-2">LinkedIn</a>
-        </p>
+        <p class="fs-6 mb-0">&copy; 2025 Manajemen Konstruksi | Sistem berbasis web untuk proyek konstruksi.</p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JS -->
-    <script>
-        // Highlight menu aktif di navbar
-        document.addEventListener("DOMContentLoaded", function () {
-            let currentPage = window.location.pathname.split("/").pop();
-            document.querySelectorAll(".nav-item a").forEach((link) => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-
-            // Aktifkan Tooltip Bootstrap
-            let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-            let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl);
-            });
-        });
-    </script>
-
 </body>
-        </html>
+</html>
