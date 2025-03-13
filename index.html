@@ -7,16 +7,23 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- 🔹 NAVBAR -->
+    <!-- 🔹 Running Text (Marquee) -->
+    <div class="bg-primary text-white py-2">
+        <marquee behavior="scroll" direction="left">
+            🚀 Update: Proyek Tower A mencapai 75% progres | Deadline laporan mingguan: 15 Maret 2025 | Meeting koordinasi besok jam 10:00 WIB
+        </marquee>
+    </div>
+
+    <!-- 🔹 Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">🏗️ Construction Management</a>
+            <a class="navbar-brand" href="index.html">🏗️ Construction Management</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,90 +38,60 @@
         </div>
     </nav>
 
-    <!-- 🔹 RUNNING TEXT -->
-    <div class="bg-warning text-dark py-2 text-center">
-        <marquee>🔔 Sistem Manajemen Konstruksi - Dokumen, Tracking, Notifikasi, Laporan, Chatbot AI - Semua dalam Satu Platform! 🔔</marquee>
-    </div>
-
-    <!-- 🔹 HERO SECTION -->
-    <section class="text-center bg-light py-5">
+    <!-- 🔹 Hero Section -->
+    <header class="bg-light text-center py-5">
         <div class="container">
-            <h1 class="fw-bold">Solusi Digital untuk Manajemen Konstruksi</h1>
-            <p class="lead">Mengelola dokumen, memantau progres proyek, dan menyederhanakan komunikasi.</p>
-            <a href="dashboard.html" class="btn btn-primary btn-lg">Mulai Sekarang</a>
+            <h1 class="display-5">🚧 Construction Management System</h1>
+            <p class="lead">Platform manajemen proyek konstruksi yang efisien & terstruktur.</p>
+            <a href="dashboard.html" class="btn btn-primary">Lihat Dashboard</a>
         </div>
-    </section>
+    </header>
 
-    <!-- 🔹 PANDUAN MENU -->
-    <section class="container py-5">
-        <h2 class="text-center mb-4">Panduan Penggunaan</h2>
+    <!-- 🔹 Panduan Menu -->
+    <section id="panduan" class="container my-5">
+        <h2 class="text-center">📌 Panduan Penggunaan</h2>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card text-center shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">📊 Dashboard</h5>
-                        <p class="card-text">Menampilkan ringkasan progres proyek dan dokumen terkait.</p>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <h4>📝 Manajemen Dokumen</h4>
+                <p>Kelola sirkulasi dokumen proyek seperti approval, laporan, berita acara, dan lainnya.</p>
             </div>
-            <div class="col-md-3">
-                <div class="card text-center shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">📂 Manajemen Dokumen</h5>
-                        <p class="card-text">Kelola sirkulasi dokumen proyek dengan persetujuan & status.</p>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <h4>📊 Dashboard</h4>
+                <p>Lihat progres proyek secara real-time dan status outstanding pekerjaan.</p>
             </div>
-            <div class="col-md-3">
-                <div class="card text-center shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">⏳ Tracking & Notifikasi</h5>
-                        <p class="card-text">Pantau perkembangan dan permasalahan proyek secara real-time.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">🤖 Chatbot AI</h5>
-                        <p class="card-text">Dapatkan bantuan otomatis terkait proyek langsung dari AI.</p>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <h4>🤖 Chatbot AI</h4>
+                <p>Dapatkan bantuan cepat dari chatbot AI untuk informasi proyek dan dokumen.</p>
             </div>
         </div>
     </section>
 
-    <!-- 🔹 STATISTIK PROYEK -->
-    <section class="bg-light py-5">
-        <div class="container text-center">
-            <h2>Statistik Proyek</h2>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="p-4 bg-primary text-white rounded">
-                        <h3 id="docCount">0</h3>
-                        <p>Dokumen Dikelola</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="p-4 bg-success text-white rounded">
-                        <h3 id="projectProgress">0%</h3>
-                        <p>Progres Proyek</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔹 FOOTER -->
+    <!-- 🔹 Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <p>Hak Cipta &copy; 2025. Dibuat untuk manajemen konstruksi.</p>
+        <p>Hak Cipta &copy; 2025 - Construction Management Web</p>
+        <p>📩 Email: support@constructionweb.com | 📍 Lokasi: Jakarta, Indonesia</p>
+        <p>
+            <a href="#" class="text-white mx-2">Facebook</a> | 
+            <a href="#" class="text-white mx-2">Twitter</a> | 
+            <a href="#" class="text-white mx-2">LinkedIn</a>
+        </p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="assets/js/main.js"></script>
+    <script>
+        // Highlight menu aktif di navbar
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentPage = window.location.pathname.split("/").pop();
+            document.querySelectorAll(".nav-item a").forEach((link) => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
