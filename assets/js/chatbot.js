@@ -1,27 +1,40 @@
-function toggleChatbot() {
-    document.getElementById("chatbot-container").classList.toggle("show");
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
 
-function sendMessage() {
-    let userInput = document.getElementById("chatbot-input").value;
-    document.getElementById("chatbot-messages").innerHTML += `<p><b>User:</b> ${userInput}</p>`;
+    function appendMessage(sender, message) {
+        let msgDiv = document.createElement("div");
+        msgDiv.classList.add("chat-message", sender);
+        msgDiv.textContent = message;
+        chatBox.appendChild(msgDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
 
-    fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer YOUR_OPENAI_API_KEY"
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: userInput }]
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        let botReply = data.choices[0].message.content;
-        document.getElementById("chatbot-messages").innerHTML += `<p><b>AI:</b> ${botReply}</p>`;
+    function botResponse(userText) {
+        let response = "Maaf, saya tidak mengerti.";
+
+        if (userText.includes("dokumen")) {
+            response = "Anda bisa mengelola dokumen di halaman Manajemen Dokumen.";
+        } else if (userText.includes("progress")) {
+            response = "Lihat status progres proyek di Dashboard.";
+        } else if (userText.includes("laporan")) {
+            response = "Laporan harian, mingguan, dan bulanan tersedia di Manajemen Dokumen.";
+        }
+
+        setTimeout(() => appendMessage("bot", response), 500);
+    }
+
+    sendBtn.addEventListener("click", function () {
+        let userText = userInput.value.trim();
+        if (userText === "") return;
+
+        appendMessage("user", userText);
+        userInput.value = "";
+        botResponse(userText);
     });
 
-    document.getElementById("chatbot-input").value = "";
-}
+    userInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") sendBtn.click();
+    });
+});
