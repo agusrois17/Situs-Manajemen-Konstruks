@@ -2,80 +2,119 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Manajemen Konstruksi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Construction Management Web</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Situs Manajemen Konstruksi</h1>
-        <nav>
-            <button onclick="toggleMenu()">☰ Menu</button>
-            <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pages/dashboard.html">Dashboard</a></li>
-                <li><a href="pages/dokumen.html">Dokumen</a></li>
-                <li><a href="pages/transaksi.html">Transaksi</a></li>
-                <li><a href="pages/laporan.html">Laporan</a></li>
-                <li><a href="pages/monitoring.html">Monitoring</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Kelola Proyek Konstruksi dengan Mudah</h2>
-        <p>Tracking progres, manajemen dokumen, monitoring lapangan, & approval dalam satu sistem.</p>
-    </section>
-
-    <!-- Bulk Topik -->
-    <section class="topik">
-        <h2>Topik Utama dalam Manajemen Konstruksi</h2>
-        
-        <div class="topik-box">
-            <h3>📁 Manajemen Dokumen Konstruksi</h3>
-            <p>Kelola transaksi dokumen proyek, termasuk approval shop drawing, material, dan izin pelaksanaan.</p>
+    <!-- 🔹 NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">🏗️ Construction Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="document-circulation.html">Dokumen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chatbot.html">Chatbot</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <div class="topik-box">
-            <h3>📊 Tracking Progres Proyek</h3>
-            <p>Monitoring realisasi proyek berdasarkan deviasi antara rencana dan aktual.</p>
-        </div>
+    <!-- 🔹 RUNNING TEXT -->
+    <div class="bg-warning text-dark py-2 text-center">
+        <marquee>🔔 Sistem Manajemen Konstruksi - Dokumen, Tracking, Notifikasi, Laporan, Chatbot AI - Semua dalam Satu Platform! 🔔</marquee>
+    </div>
 
-        <div class="topik-box">
-            <h3>📑 Laporan & Monitoring</h3>
-            <p>Site memo, risalah rapat, dan laporan harian langsung tersimpan di sistem.</p>
-        </div>
-
-        <div class="topik-box">
-            <h3>✅ Sistem Persetujuan (Approval)</h3>
-            <p>Approval otomatis berbasis level otoritas (QC, Manajer Proyek, Owner, dll.).</p>
-        </div>
-
-        <div class="topik-box">
-            <h3>🔒 Autentikasi & Otoritas User</h3>
-            <p>Hak akses berbeda untuk setiap peran dalam proyek, dari admin hingga pekerja lapangan.</p>
-        </div>
-
-        <div class="topik-box">
-            <h3>🤖 Integrasi AI & Notifikasi</h3>
-            <p>Chatbot AI untuk menjawab pertanyaan teknis, serta notifikasi otomatis tentang update proyek.</p>
+    <!-- 🔹 HERO SECTION -->
+    <section class="text-center bg-light py-5">
+        <div class="container">
+            <h1 class="fw-bold">Solusi Digital untuk Manajemen Konstruksi</h1>
+            <p class="lead">Mengelola dokumen, memantau progres proyek, dan menyederhanakan komunikasi.</p>
+            <a href="dashboard.html" class="btn btn-primary btn-lg">Mulai Sekarang</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Situs Manajemen Konstruksi | Email: agus17rois@gmail.com</p>
+    <!-- 🔹 PANDUAN MENU -->
+    <section class="container py-5">
+        <h2 class="text-center mb-4">Panduan Penggunaan</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">📊 Dashboard</h5>
+                        <p class="card-text">Menampilkan ringkasan progres proyek dan dokumen terkait.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">📂 Manajemen Dokumen</h5>
+                        <p class="card-text">Kelola sirkulasi dokumen proyek dengan persetujuan & status.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">⏳ Tracking & Notifikasi</h5>
+                        <p class="card-text">Pantau perkembangan dan permasalahan proyek secara real-time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">🤖 Chatbot AI</h5>
+                        <p class="card-text">Dapatkan bantuan otomatis terkait proyek langsung dari AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 STATISTIK PROYEK -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Statistik Proyek</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="p-4 bg-primary text-white rounded">
+                        <h3 id="docCount">0</h3>
+                        <p>Dokumen Dikelola</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-4 bg-success text-white rounded">
+                        <h3 id="projectProgress">0%</h3>
+                        <p>Progres Proyek</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 FOOTER -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Hak Cipta &copy; 2025. Dibuat untuk manajemen konstruksi.</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        }
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
