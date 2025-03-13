@@ -9,4 +9,4 @@ app.use(express.json());
 app.use("/api", documentRoutes);
 
 const PORT = 5000;
-app.listen(PORT, () => console.log(`Server berjalan di port ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server berjalan di port ${PORT}`));
