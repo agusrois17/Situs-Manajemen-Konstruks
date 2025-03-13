@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatbot AI - Construction Management</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+</head>
+<body>
+
+    <!-- 🔹 NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🏗️ Construction Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="document-circulation.html">Dokumen</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="chatbot.html">Chatbot</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔹 CONTAINER CHATBOT -->
+    <div class="container my-4">
+        <h1 class="text-center">🤖 Chatbot AI</h1>
+
+        <div class="chat-container">
+            <div id="chat-box" class="chat-box">
+                <div class="chat-message bot">Halo! Saya Chatbot AI. Bagaimana saya bisa membantu?</div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="user-input" class="form-control" placeholder="Ketik pesan...">
+                <button class="btn btn-primary" id="send-btn">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 FOOTER -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Hak Cipta &copy; 2025. Construction Management Web</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/chatbot.js"></script>
+
+</body>
+              </html>
