@@ -17,13 +17,20 @@
         .navbar-brand, .nav-link {
             color: white !important;
         }
+        /* Sidebar Styling */
         .sidebar {
             height: 100vh;
-            position: fixed;
             width: 250px;
             background-color: #212529;
             color: white;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: all 0.3s ease-in-out;
             padding-top: 20px;
+        }
+        .sidebar.show {
+            left: 0;
         }
         .sidebar a {
             padding: 10px 20px;
@@ -35,8 +42,9 @@
             background-color: #495057;
         }
         .content {
-            margin-left: 260px;
+            margin-left: 10px;
             padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
         }
         .running-text {
             background-color: #ffc107;
@@ -45,25 +53,26 @@
             font-size: 14px;
             font-weight: bold;
         }
-        .card {
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: scale(1.05);
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-dark">
         <div class="container-fluid">
+            <span class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></span>
             <a class="navbar-brand" href="#">Manajemen Konstruksi</a>
         </div>
     </nav>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <h5 class="text-center">Menu Utama</h5>
         <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
         <a href="document-circulation.html"><i class="fas fa-folder-open"></i> Sirkulasi Dokumen</a>
@@ -79,77 +88,23 @@
     </div>
 
     <!-- Konten -->
-    <div class="content">
+    <div class="content" id="content">
         <h2 class="text-center mb-4">Selamat Datang di Sistem Manajemen Konstruksi</h2>
-
-        <div class="row">
-            <!-- Admin Proyek -->
-            <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3">
-                    <div class="card-header"><i class="fas fa-user-tie"></i> Admin Proyek</div>
-                    <div class="card-body">
-                        <p class="card-text">Kelola sirkulasi dokumen dan administrasi proyek.</p>
-                        <a href="document-circulation.html" class="btn btn-light">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Supervisi -->
-            <div class="col-md-4">
-                <div class="card text-white bg-primary mb-3">
-                    <div class="card-header"><i class="fas fa-eye"></i> Supervisi</div>
-                    <div class="card-body">
-                        <p class="card-text">Pantau laporan harian dan temuan lapangan.</p>
-                        <a href="#" class="btn btn-light">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tenaga Ahli -->
-            <div class="col-md-4">
-                <div class="card text-white bg-success mb-3">
-                    <div class="card-header"><i class="fas fa-tools"></i> Tenaga Ahli</div>
-                    <div class="card-body">
-                        <p class="card-text">Kelola shop drawing dan approval material.</p>
-                        <a href="#" class="btn btn-light">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Quality Control -->
-            <div class="col-md-4">
-                <div class="card text-white bg-warning mb-3">
-                    <div class="card-header"><i class="fas fa-check-circle"></i> Quality Control</div>
-                    <div class="card-body">
-                        <p class="card-text">Verifikasi hasil tes dan berita acara.</p>
-                        <a href="#" class="btn btn-light">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HSE -->
-            <div class="col-md-4">
-                <div class="card text-white bg-danger mb-3">
-                    <div class="card-header"><i class="fas fa-shield-alt"></i> HSE</div>
-                    <div class="card-body">
-                        <p class="card-text">Kelola keselamatan dan dampak lingkungan.</p>
-                        <a href="#" class="btn btn-light">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dashboard -->
-            <div class="col-md-4">
-                <div class="card text-white bg-info mb-3">
-                    <div class="card-header"><i class="fas fa-chart-pie"></i> Dashboard</div>
-                    <div class="card-body">
-                        <p class="card-text">Lihat ringkasan progres proyek.</p>
-                        <a href="dashboard.html" class="btn btn-light">Lihat Dashboard</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p>Silakan pilih menu dari sidebar untuk mengakses fitur manajemen konstruksi.</p>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            sidebar.classList.toggle("show");
+            if (sidebar.classList.contains("show")) {
+                content.style.marginLeft = "260px";
+            } else {
+                content.style.marginLeft = "10px";
+            }
+        }
+    </script>
 
 </body>
 </html>
